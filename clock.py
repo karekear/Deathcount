@@ -1,11 +1,11 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-import words
+import deathcount
 
 twische = BlockingScheduler()
 
 @twische.scheduled_job('interval',minutes=60)
 def timed_job():
-    words.puttweet()
+    deathcount.job()
 
 if __name__ == "__main__":
     twische.start()
