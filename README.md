@@ -1,9 +1,9 @@
-# TweetBot
+# Deathcount
 
 ## Description
 
 This is bot program for Twitter.
-Tweets random words periodically.
+Counting uec_death
 
 ## Usage
 
