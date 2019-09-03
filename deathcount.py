@@ -25,7 +25,7 @@ def job():
 	print(minutes)
 	print(hours)
 
-	tweet = "@tos\nuec_deathまであと{}時間{}分".format(hours,minutes)
+	tweet = "@tos\nuec_deathまであと{}時間".format(hours-9)
 	#tweet = "@tos\n{}".format(str(now))
 	print(tweet)
 
