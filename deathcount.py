@@ -26,8 +26,8 @@ def job():
 	print(hours)
 
 	if hours-9 >= 0:
-		tweet = "@tos\nuec_deathまであと{}時間".format(hours-9)
-		#tweet = "@tos\n{}".format(str(now))
+		#tweet = "@tos\nuec_deathまであと{}時間".format(hours-9)
+		tweet = "@tos\n{}".format(str(now))
 		print(tweet)
 
 		params = {"status" : tweet} #辞書型だよなこれ
