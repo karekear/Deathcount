@@ -40,9 +40,9 @@ def job():
 			if res.status_code == 403:
 				print("Already Tweeted")
 
-"""
-#job()
 
+#job()
+"""
 schedule.every().minute.at(':00').do(job)
 
 while True:
