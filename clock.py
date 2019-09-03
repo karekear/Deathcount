@@ -4,7 +4,8 @@ import deathcount
 
 twische = BlockingScheduler()
 
-@twische.scheduled_job('interval',minutes=1)
+#@twische.scheduled_job('interval',minutes=1)
+@twische.scheduled_job('cron',minutes=20) #毎時20分に実行
 def timed_job():
     deathcount.job()
 

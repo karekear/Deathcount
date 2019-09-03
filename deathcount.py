@@ -25,8 +25,8 @@ def job():
 	print(minutes)
 	print(hours)
 
-	#tweet = "@tos\nuec_deathまであと{}時間{}分".format(hours,minutes)
-	tweet = "@tos\n{}".format(str(now))
+	tweet = "@tos\nuec_deathまであと{}時間{}分".format(hours,minutes)
+	#tweet = "@tos\n{}".format(str(now))
 	print(tweet)
 
 	params = {"status" : tweet} #辞書型だよなこれ
@@ -39,7 +39,7 @@ def job():
 		if res.status_code == 403:
 			print("Already Tweeted")
 
-#job()
+job()
 
 """
 schedule.every().minute.at(':00').do(job)
