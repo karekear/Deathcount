@@ -1,9 +1,9 @@
 import json #標準のjsonモジュールとconfig.pyの読み込み
 from requests_oauthlib import OAuth1Session #OAuthのライブラリの読み込み
-import pprint
+#import pprint
+import os
 import datetime
 import math
-#import schedule
 import time
 
 CK = "CONSUMER_KEY"
@@ -11,7 +11,7 @@ CS = "CONSUMER_SECRET"
 AT = "ACCESS_TOKEN"
 ATS = "ACCESS_TOKEN_SECRET"
 
-twitter = OAuth1Session(CK, CS, AT, ATS) #認証処理
+twitter = OAuth1Session(os.environ["CONSUMER_KEY"],os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN"], os.environ["ACCESS_TOKEN_SECRET"]) #認証処理
 url_post = "https://api.twitter.com/1.1/statuses/update.json"       #ツイート用urlst
 
 def job():
@@ -38,6 +38,8 @@ def job():
 		print("Failed. : %d" % res.status_code)
 		if res.status_code == 403:
 			print("Already Tweeted")
+
+job()
 
 """
 schedule.every().minute.at(':00').do(job)
