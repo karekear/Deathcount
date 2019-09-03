@@ -21,24 +21,24 @@ def job():
 	minutes = ((ttm - now).seconds//60 + 1) % 60
 	seconds = (ttm - now).seconds//3600
 	hours = days + seconds + 1
-	print(seconds)
-	print(minutes)
-	print(hours)
+	print("seconds:",seconds)
+	print("minutes",minutes)
+	print("hours",hours)
 
-	#if hours-9 >= 0:
-	#tweet = "@tos\nuec_deathまであと{}時間".format(hours-9)
-	tweet = "@tos\n{}".format(str(now))
-	print(tweet)
+	if hours-9 >= 0:
+		tweet = "uec_deathまであと{}時間".format(hours-9)
+		#tweet = "@tos\n{}".format(str(now))
+		print(tweet)
 
-	params = {"status" : tweet} #辞書型だよなこれ
-	res = twitter.post(url_post, params = params) #post送信
+		params = {"status" : tweet} #辞書型だよなこれ
+		res = twitter.post(url_post, params = params) #post送信
 
-	if res.status_code == 200:   #正常投稿出来た場合
-		print("Success.")
-	else:                       #正常投稿出来なかった場合
-		print("Failed. : %d" % res.status_code)
-		if res.status_code == 403:
-			print("Already Tweeted")
+		if res.status_code == 200:   #正常投稿出来た場合
+			print("Success.")
+		else:                       #正常投稿出来なかった場合
+			print("Failed. : %d" % res.status_code)
+			if res.status_code == 403:
+				print("Already Tweeted")
 
 """
 #job()
