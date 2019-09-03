@@ -3,7 +3,7 @@ import deathcount
 
 twische = BlockingScheduler()
 
-@twische.scheduled_job('interval',minutes=60)
+@twische.scheduled_job('interval',minutes=5)
 def timed_job():
     deathcount.job()
 
